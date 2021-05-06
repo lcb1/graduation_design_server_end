@@ -1,0 +1,107 @@
+{
+  "wordRank": 1,
+  "headWord": "reproduce",
+  "content": {
+    "word": {
+      "wordHead": "reproduce",
+      "wordId": "Level8luan_2_1",
+      "content": {
+        "sentence": {
+          "sentences": [
+            {
+              "sContent": "The turtles return to the coast to reproduce.",
+              "sCn": "海龟回到岸上繁殖。"
+            }
+          ],
+          "desc": "例句"
+        },
+        "usphone": ",riprə\u0027dus",
+        "syno": {
+          "synos": [
+            {
+              "pos": "vt",
+              "tran": "复制；再生；生殖；使…在脑海中重现",
+              "hwds": [
+                {
+                  "w": "generate"
+                },
+                {
+                  "w": "repeat"
+                }
+              ]
+            },
+            {
+              "pos": "vi",
+              "tran": "复制；繁殖",
+              "hwds": [
+                {
+                  "w": "breed"
+                },
+                {
+                  "w": "increase"
+                }
+              ]
+            }
+          ],
+          "desc": "同近"
+        },
+        "ukphone": "riːprə\u0027djuːs",
+        "ukspeech": "reproduce\u0026type\u003d1",
+        "star": 0,
+        "phone": ",ri:prə\u0027dju:s",
+        "speech": "reproduce",
+        "relWord": {
+          "rels": [
+            {
+              "pos": "adj",
+              "words": [
+                {
+                  "hwd": "reproductive",
+                  "tran": " 生殖的；再生的；复制的"
+                },
+                {
+                  "hwd": "reproducible",
+                  "tran": " 可再生的；可繁殖的；可复写的"
+                }
+              ]
+            },
+            {
+              "pos": "adv",
+              "words": [
+                {
+                  "hwd": "reproducibly",
+                  "tran": " 可再生产地"
+                }
+              ]
+            },
+            {
+              "pos": "n",
+              "words": [
+                {
+                  "hwd": "reproduction",
+                  "tran": " 繁殖，生殖；复制；复制品"
+                },
+                {
+                  "hwd": "reproducer",
+                  "tran": " 扬声器；复制程序；再生器"
+                }
+              ]
+            }
+          ],
+          "desc": "同根"
+        },
+        "usspeech": "reproduce\u0026type\u003d2",
+        "trans": [
+          {
+            "tranCn": "复制；再生；生殖；使…在脑海中重现",
+            "descOther": "英释",
+            "descCn": "中释",
+            "pos": "v",
+            "tranOther": "if an animal or plant reproduces, or reproduces itself, it produces young plants or animals"
+          }
+        ]
+      }
+    }
+  },
+  "bookId": "Level8luan_2"
+}

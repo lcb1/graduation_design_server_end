@@ -1,0 +1,15 @@
+spring:
+  mail:
+    host: smtp.163.com
+    username: superlcb2021@163.com
+    password: FAEUCRVVFEHHIAZK
+    protocol: smtp
+    properties.mail.smtp.auth: true
+    properties.mail.smtp.port: 465 #465或者994
+    properties.mail.display.sendmail: demo email
+    properties.mail.display.sendname: system sender
+    properties.mail.smtp.starttls.enable: true
+    properties.mail.smtp.starttls.required: true
+    properties.mail.smtp.ssl.enable: true
+    default-encoding: utf-8
+    from: superlcb2021@163.com
