@@ -27,13 +27,19 @@ object RepoUtils {
         return JdbcUtils.runSql(sql)
     }
 
-    fun getTargetByRawWord(rawWord: String):List<Map<String,String>>{
-        val sql=WordQueryTable.getFindTargetByRawWord(rawWord)
+    fun getTargetByRawWord(rawWord: String,pageN: Int=10):List<Map<String,String>>{
+        val sql=WordQueryTable.getFindTargetByRawWord(rawWord,pageN)
         return JdbcUtils.executeSql(sql)
     }
 
-    fun getRawWordByTarget(target: String):List<Map<String,String>>{
-        val sql=WordQueryTable.getFindRawWordByTarget(target)
+    fun getRealTargetByRawWord(rawWord: String,pageN: Int=10):List<Map<String,String>>{
+        val sql=WordQueryTable.getRealFindTargetByRawWord(rawWord,pageN)
+        return JdbcUtils.executeSql(sql)
+    }
+
+
+    fun getRawWordByTarget(target: String,pageN: Int=10):List<Map<String,String>>{
+        val sql=WordQueryTable.getFindRawWordByTarget(target,pageN)
         return JdbcUtils.executeSql(sql)
     }
 
@@ -59,11 +65,15 @@ enum class WordQueryTable(val label:String){
         }
 
         fun getFindTargetByRawWord(rawWord: String,pageN:Int= PAGE_N):String{
-            return "select ${RAW_WORD},${TARGET},${UK_PHONE} from ${TABLE_NAME} where ${RAW_WORD} like ${getQueryStringSub(rawWord).toReal()} limit ${pageN}"
+            return getRealFindTargetByRawWord(getQueryStringSub(rawWord),pageN)
+        }
+        fun getRealFindTargetByRawWord(rawWord: String,pageN: Int= PAGE_N):String{
+            return "select ${RAW_WORD},${TARGET},${UK_PHONE} from ${TABLE_NAME} where ${RAW_WORD} like ${rawWord.toReal()} limit ${pageN}"
         }
 
+
         fun getFindRawWordByTarget(target: String,pageN: Int= PAGE_N):String{
-            return return "select ${RAW_WORD},${TARGET},${UK_PHONE} from ${TABLE_NAME} where ${TARGET} like ${getQueryStringAll(target).toReal()} limit ${pageN}"
+            return  "select ${RAW_WORD},${TARGET},${UK_PHONE} from ${TABLE_NAME} where ${TARGET} like ${getQueryStringAll(target).toReal()} limit ${pageN}"
         }
 
 

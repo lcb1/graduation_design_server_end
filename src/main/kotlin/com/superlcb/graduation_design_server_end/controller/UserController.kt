@@ -154,13 +154,14 @@ class UserController {
 
         for(repo in repoList){
 
-            val realTimeStamp=(repo[TIME_STAMP] as String).toLong()
+            val realTimeStamp=(repo[TIME_STAMP].toString()).toLong()
             val now=System.currentTimeMillis()
-            val realCode=repo[VERIFY_CODE] as String
+            val realCode=repo[VERIFY_CODE].toString()
             if(realCode==verifyCode){
                 if(realTimeStamp-now> TIMEOUT){
                     return Utils.getResult(ResultStatus.VERIFY_CODE_TIMEOUT_ERROR)
                 }
+                insertByUserAndPassword(userEmail,password)
                 return Utils.getResult(ResultStatus.IS_OK)
             }
         }

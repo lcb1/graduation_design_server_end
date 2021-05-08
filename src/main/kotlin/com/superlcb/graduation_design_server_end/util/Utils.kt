@@ -58,7 +58,7 @@ object Utils {
 
     val emailFilePath="templates/email.html"
 
-    val wordQueryJsonFilePath="static/Level8luan_2.json"
+    val wordQueryJsonFilePath="ext_data/Level8luan_2.json"
     val typeToken by lazy {
         object : TypeToken<MapType>(){}.type
     }
@@ -248,6 +248,17 @@ object Utils {
     }
 
 
+
+
+
+    fun insertByStep(rawStr:String,sep:Char='%',callback: (stepStr:String) -> Boolean){
+        var i=rawStr.length-1;
+        val builder=StringBuilder(rawStr).append(sep)
+        while(callback(builder.toString())&&i>=0){
+            builder.insert(i,sep)
+            i--
+        }
+    }
 
 
 

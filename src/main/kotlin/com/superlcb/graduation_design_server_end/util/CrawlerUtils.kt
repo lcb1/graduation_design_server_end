@@ -11,12 +11,17 @@ object CrawlerUtils {
         ".c-border span,.c-border p"
 
     }
-    private val selectFilterByTr by lazy {
-        ".c-border tr"
+     val selectFilterByTr by lazy {
+        ".c-border tr,.c-border p.op_sp_fanyi_line_two"
+    }
+
+
+    private val selectFilterByTable by lazy {
+        ".c-border table"
     }
 
     private val selectFilterByExample by lazy {
-        ".c-border tr,.c-border div.op_dict3_lineone_result,.c-border div.op_dict_linetwo_result"
+        "div.op_dict3_lineone_result,div.op_dict_linetwo_result,.c-border tr"
     }
 
     val isSetCookie=false
@@ -151,8 +156,6 @@ object CrawlerUtils {
         val urlPost= getRealUrlPost(rawText,target)
         val page= getPage(urlPost)
 
-        getHtml(urlPost)
-
         val doc=Jsoup.parse(page)
         val filterTags=doc.select(selectFilter)
 
@@ -180,5 +183,7 @@ object CrawlerUtils {
         }
         return builder.toString()
     }
+
+
 
 }

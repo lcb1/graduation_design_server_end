@@ -1,15 +1,12 @@
 package com.superlcb.graduation_design_server_end
 
-import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import com.google.gson.JsonElement
 import com.google.gson.JsonObject
 import com.google.gson.reflect.TypeToken
-import com.sun.org.apache.xml.internal.security.algorithms.JCEMapper
 import com.superlcb.graduation_design_server_end.repo.RepoUtils
 import com.superlcb.graduation_design_server_end.repo.WordQueryTable
 import com.superlcb.graduation_design_server_end.util.*
-import okhttp3.OkHttp
 import okhttp3.OkHttpClient
 import okhttp3.Request
 import org.apache.tomcat.util.codec.binary.Base64
@@ -18,16 +15,12 @@ import org.junit.jupiter.api.Test
 import org.w3c.dom.Node
 import java.io.File
 import java.io.FileOutputStream
-import java.nio.charset.Charset
 import java.security.MessageDigest
 import java.security.Security
 import java.security.acl.Owner
 import java.sql.DriverManager
-import javax.crypto.Cipher
-import javax.print.attribute.IntegerSyntax
 import javax.xml.parsers.DocumentBuilderFactory
 import kotlin.reflect.KProperty
-import kotlin.reflect.full.declaredMemberProperties
 
 class MyTest {
 
@@ -409,7 +402,7 @@ class MyTest {
     */
     @Test
     fun testReadAllCET6_2(){
-        val lines=Utils.readAllLines("static/Level8luan_2.json")
+        val lines=Utils.readAllLines("ext_data/Level8luan_2.json")
 
         val wordListMaps=ArrayList<Map<String,JsonObject>>()
 
@@ -570,10 +563,27 @@ class MyTest {
 
 
 
+    /***
+    author: liuchengbiao
+    date_time: 2021/5/7 10:40 上午
+    */
+    @Test
+    fun testGetEachByFilter(){
+        println(CrawlerUtils.getEachTextByFilter("come",CrawlerUtils.selectFilterByTr))
+    }
 
 
-
-
+    /***
+    author: liuchengbiao
+    date_time: 2021/5/7 11:18 上午
+    */
+    @Test
+    fun testInsertStep(){
+        println(Utils.insertByStep("Hello"){
+            println(it)
+            true
+        })
+    }
 
 
 }
